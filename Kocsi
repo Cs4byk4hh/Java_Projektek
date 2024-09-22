@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+public class Kocsi {
+
+    String Kocsi = "Audi";
+    String Kocsi_fajtaja = "Q8";
+    int Kocsi_evjara = 2023;
+    double Kocsi_ara = 59000000.0;
+    boolean igenyes_ar = true;
+    int sebesseg;
+
+    void ara() {
+        if (Kocsi_ara < 59000000.0) {
+            igenyes_ar = false;
+        }
+        else {
+            System.out.println("A kocsi valószínűleg kifogástalan állapotban van!");
+        }
+    }
+
+    void kocsiallasa() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Kérem a kocsi sebességét: ");
+        boolean kocsimegy = false;
+        boolean kocsiall = false;
+        sebesseg = sc.nextInt();
+        if (sebesseg > 0) {
+            System.out.printf("A kocsi %d km/h-val halad!", sebesseg);
+            kocsimegy = true;
+        }
+        else if (sebesseg == 0) {
+            System.out.println("A kocsi egy helyben áll!");
+            kocsiall = true;
+        }
+        else {
+            System.out.println("Hibás értéket adott meg!");
+        }
+    }
+
+
+    /*
+    void all() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Kérem a kocsi sebességét: ");
+        sebesseg = sc.nextInt();
+        if (sebesseg == 0) {
+            System.out.println("A kocsi egy helyben áll!");
+        }
+    }
+    */
+    public static void main(String[] args) {
+        Kocsi kocsi = new Kocsi();
+
+    }
+}
