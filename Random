@@ -1,0 +1,67 @@
+import java.util.Scanner;
+
+public class Solo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("Menü:");
+            System.out.println("\t1: összeadás");
+            System.out.println("\t2: kivonás");
+            System.out.println("\t3: szorzás");
+            System.out.println("\t4: osztás");
+            System.out.print("\tKérem adjon meg egy menüpontot: ");
+            int menu = sc.nextInt();
+
+            switch (menu) {
+                case 1:
+                    System.out.print("Kérek egy számot: ");
+                    int szam1 = sc.nextInt();
+                    System.out.print("Kérek mégegy számot: ");
+                    int szam2 = sc.nextInt();
+                    int sum = szam1 + szam2;
+                    System.out.printf("A két szám összege: %.0f\n", sum);
+                    break;
+                case 2:
+                    System.out.print("Kérek egy számot: ");
+                    szam1 = sc.nextInt();
+                    System.out.print("Kérek mégegy számot: ");
+                    szam2 = sc.nextInt();
+                    int sub = 0;
+                    if (szam1 > szam2) {
+                        sub = szam1 - szam2;
+                        System.out.print("A két szám különbsége: " + sub);
+                    }
+                    else {
+                        sub = szam2 - szam1;
+                        System.out.print("A két szám különbsége: " + sub);
+                    }
+                    break;
+                case 3:
+                    System.out.print("Kérek egy számot: ");
+                    szam1 = sc.nextInt();
+                    System.out.print("Kérek mégegy számot: ");
+                    szam2 = sc.nextInt();
+                    int mul = szam1 * szam2;
+                    System.out.print("A két szám szorzata: " + mul);
+                    break;
+                case 4:
+                    System.out.print("Kérek egy számot: ");
+                    szam1 = sc.nextInt();
+                    System.out.print("Kérek mégegy számot: ");
+                    szam2 = sc.nextInt();
+                    int div = 0;
+                    if (szam1 > szam2) {
+                        div = szam1 / szam2;
+                        System.out.println("A két szám elosztva: " + div);
+                    }
+                    else {
+                        div = szam2 / szam1;
+                        System.out.println("A két szám elosztva: " + div);
+                    }
+                default:
+                    System.out.println("Helytelen menüpontot adott meg!");
+            }
+        }
+    }
+}
