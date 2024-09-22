@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class szorgalmi2 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Kérek egy számot: ");
+        int szam = sc.nextInt();
+        boolean primszam = true;
+
+
+        do {
+            if (szam == 0 || szam == 1) {
+                primszam = false;
+                System.out.print("Kérek egy számot: ");
+                szam = sc.nextInt();
+            }
+            for (int i = 2; i <= szam / 2; i++) {
+                if (szam % i <= 0) {
+                    System.out.println(szam + ": A szám nem prímszám!");
+                    primszam = false;
+                    break;
+                }
+            }
+        } while ((szam <= 0) && (szam <= 1));
+
+        if (primszam == true) {
+            System.out.println(szam + ": A szám prímszám!");
+        }
+    }
+}
