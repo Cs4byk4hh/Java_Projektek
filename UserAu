@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class UserAu {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Make a username: ");
+        String makeuser = sc.nextLine();
+        System.out.print("Make a password: ");
+        String makepass = sc.nextLine();
+
+        System.out.print("Enter username: ");
+        String username = sc.nextLine();
+        System.out.print("Enter Password: ");
+        String pass = sc.nextLine();
+
+        do {
+            if ((username.equals(makeuser)) && (pass.equals(makepass))) {
+                System.out.println("Welcome in!");
+                break;
+            }
+            else {
+                System.out.print("Would you like to retry? (enter Yes or No) ");
+                String ans = sc.nextLine();
+                String again = "Yes";
+                String again1 = "yes";
+                if ((ans.equals(again)) || (ans.equals(again1))) {
+                    System.out.print("Enter username: ");
+                    username = sc.nextLine();
+                    System.out.print("Enter password: ");
+                    pass = sc.nextLine();
+                    if (pass.equals(makepass) && username.equals(makeuser)) {
+                        System.out.println("Welcome in!");
+                        break;
+                    }
+                }
+                else {
+                    System.out.println("Have a great day!");
+                    break;
+                }
+
+            }
+
+        } while ((username != makeuser) && (pass != makepass));
+    }
+}
