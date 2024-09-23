@@ -4,16 +4,9 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static double Terulet() {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Kérem a háromszög a oldalát: ");
-        double aoldal = sc.nextDouble();
-        System.out.print("Kérem a háromszög b oldalát: ");
-        double boldal = sc.nextDouble();
-        System.out.print("Kérem a háromszög c oldalát: ");
-        double coldal = sc.nextDouble();
-        double s  = (aoldal + boldal + coldal) / 2;
-        double t = Math.sqrt((s * (s - aoldal)) * (s - boldal) * (s - coldal));
+     public static double Terulet(double a, double b, double c) {
+        double s  = (a + b + c) / 2;
+        double t = Math.sqrt((s * (s - a)) * (s - b) * (s - c));
         System.out.printf("A háromszög területe: %.1f\n", t);
         return t;
     }
@@ -40,17 +33,16 @@ public class Main {
             }
             osszega += a;
             osszegb += b;
+            double c = (double) Math.pow(osszega, 2) + Math.pow(osszegb, 2);
+            System.out.printf("A háromszög átfogója %.3f hosszú!\n", c);
             System.out.print("Kérem a befogo egyik oldalat (a): ");
-             a = sc.nextDouble();
+            a = sc.nextDouble();
             System.out.print("Kérem a befogo masik oldalat (b): ");
              b = sc.nextDouble();
         } while (a != 0 && b != 0);
-        double atfogo = (double) Math.pow(osszega, 2) + Math.pow(osszegb, 2);
-        System.out.printf("A háromszög átfogója %.3f hosszú!\n", atfogo);
 
 
-        // Terulet();
-
+        // Terulet(a, b, c);
 
     }
 }
