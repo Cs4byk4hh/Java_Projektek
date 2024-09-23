@@ -1,0 +1,56 @@
+package org.example;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static double Terulet() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Kérem a háromszög a oldalát: ");
+        double aoldal = sc.nextDouble();
+        System.out.print("Kérem a háromszög b oldalát: ");
+        double boldal = sc.nextDouble();
+        System.out.print("Kérem a háromszög c oldalát: ");
+        double coldal = sc.nextDouble();
+        double s  = (aoldal + boldal + coldal) / 2;
+        double t = Math.sqrt((s * (s - aoldal)) * (s - boldal) * (s - coldal));
+        System.out.printf("A háromszög területe: %.1f\n", t);
+        return t;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Kérem a befogo egyik oldalat (a): ");
+        double a = sc.nextDouble();
+        System.out.print("Kérem a befogo masik oldalat (b): ");
+        double b = sc.nextDouble();
+        double osszega  = 0;
+        double osszegb = 0;
+
+        do {
+            if (a < 0 || b < 0) {
+                System.out.println("Hibás! A befogó(k) nem lehet(nek) kisebb mint 0!");
+                System.out.print("Kérem a befogo egyik oldalat (a): ");
+                a = sc.nextDouble();
+                System.out.print("Kérem a befogo masik oldalat (b): ");
+                b = sc.nextDouble();
+            }
+            if (a == 0 || b == 0) {
+                break;
+            }
+            osszega += a;
+            osszegb += b;
+            System.out.print("Kérem a befogo egyik oldalat (a): ");
+             a = sc.nextDouble();
+            System.out.print("Kérem a befogo masik oldalat (b): ");
+             b = sc.nextDouble();
+        } while (a != 0 && b != 0);
+        double atfogo = (double) Math.pow(osszega, 2) + Math.pow(osszegb, 2);
+        System.out.printf("A háromszög átfogója %.3f hosszú!\n", atfogo);
+
+
+        // Terulet();
+
+
+    }
+}
