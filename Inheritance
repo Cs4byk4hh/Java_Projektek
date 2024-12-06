@@ -1,0 +1,60 @@
+package org.example;
+
+class Vehicle {
+    String brand;
+    int maxSpeed;
+
+    public Vehicle(String brand, int maxSpeed) {
+        this.brand = brand;
+        this.maxSpeed = maxSpeed;
+    }
+
+    public void displayInfo() {
+        System.out.println("A jármű márkája: " + " " + brand);
+        System.out.println("A jármű maximális sebessége: " + " " + maxSpeed);
+    }
+}
+
+
+class Car extends Vehicle {
+    int numberofdoors;
+
+    public Car(String brand, int maxSpeed, int numberofdoors) {
+        super(brand, maxSpeed);
+        this.numberofdoors = numberofdoors;
+    }
+
+    @Override
+    public void displayInfo() {
+        System.out.println("A jármű márkája: " + " " + brand);
+        System.out.println("A jármű maximális sebessége: " + " " + maxSpeed);
+        System.out.println("A jármű ajtainak száma: " + " " + numberofdoors);
+    }
+}
+
+class Motorcycle extends Vehicle {
+    boolean hasSidecar;
+
+
+    public Motorcycle(String brand, int maxSpeed, boolean hasSidecar) {
+        super(brand, maxSpeed);
+        this.hasSidecar = hasSidecar;
+    }
+
+    @Override
+    public void displayInfo() {
+        System.out.println("A jármű márkája: " + " " + brand);
+        System.out.println("A jármű maximális sebessége: " + " " + maxSpeed);
+        System.out.println("A járműnek van e oldalkocsija: " + " " + hasSidecar);
+    }
+}
+
+public class Inh {
+    public static void main(String[] args) {
+        Car car = new Car("Mitsubishi", 80, 4);
+        car.displayInfo();
+
+        Motorcycle motorc = new Motorcycle("Harley-Davidson", 120, true);
+        motorc.displayInfo();
+    }
+}
